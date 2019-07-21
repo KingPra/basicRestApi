@@ -1,0 +1,14 @@
+#Read Hello:
+curl -i -H "Content-Type: application/json" -X GET localhost:8080/hello
+
+# Add new pledge
+curl -i -H "Content-Type: application/json" -X POST -d '{
+	"name": "Honest Harry",
+	"statement": "I vote to change the world"
+}' localhost:8080/pledges
+
+# Edit pledge
+curl -i -H "Content-Type: application/json" -X PUT -d '{
+	"name": "Giant John",
+	"statement": "I vote to change the world"
+}' localhost:8080/pledge/1
